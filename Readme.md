@@ -4,3 +4,14 @@
 - Test link availability
 - Change all domains to xDomains
 - Change all root domains to xDomains
+
+
+#### Graph
+- Today
+- This week
+- Last Week
+- Last Month
+- 
+- Day View
+- Week View
+- Month View

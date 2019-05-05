@@ -71,6 +71,13 @@
     						<input type="text" class="form-control" id="url_input" name="link" placeholder="Paste a link" width="80" {% if short_link %}value="{{ short_link.link }}"{% endif %} >
     						
     					</div><br>
+    					    {% if short_link %}
+    					<div class="form-group text-center">
+    					<div class="input-group col-4 mx-auto">
+
+						<div id="shortenedLink" class="mx-auto" style="background-color:#fff; padding:.3em .5em .3em .5em; border-radius:5%; display:block;clear:both;"> {{request.META.HTTP_HOST}}/l/{{ short_link.shortlink }}</div>
+					</div></div> <br>
+    					{% endif %}
     					<button class="btn btn-primary" id="linkSubmitbtn">Get Shortlink</button>
     				</form>
 
@@ -78,11 +85,7 @@
     		</div>
     	<div class="row">
     		    				
-    				    				   {% if short_link %}
-    				   		<div class="col-md-4 col-offset-md-4 text-center ">
-						<div id="shortenedLink"> {{request.META.HTTP_HOST}}/l/{{ short_link.shortlink }}</div><button class="btn btn-white" onclick="copyLink();">copy link</button>
-					</div>
-    					{% endif %}
+
     	</div>
     </div>
 
@@ -119,13 +122,12 @@
 
 			});
 
-		function copyLink(e) {
-			e.preventDefault();
-		  var copyText = document.getElementById("shortenedLink");
+		$('#shortenedLink').click(function(){
+			var copyText = document.getElementById("shortenedLink");
 		  copyText.select();
 		  document.execCommand("copy");
 		  alert("linked copied");
-		}
+		})
 	</script>
 
     <!-- Optional JavaScript Online CDN -->

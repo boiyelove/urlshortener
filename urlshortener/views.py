@@ -16,8 +16,8 @@ class ShortlinkView(TemplateView):
 			short_link = ShortLink.objects.get(link = link)
 		except:
 			title = Crawler(link).get_title()
-			description = Crawler(link).get_description()
-			short_link = ShortLink.objects.create(link = link, author_ip= author_ip, title=title, description=description)
+			# description = Crawler(link).get_description()
+			short_link = ShortLink.objects.create(link = link, author_ip= author_ip, title=title)
 		context = {
 		'short_link': short_link
 		}

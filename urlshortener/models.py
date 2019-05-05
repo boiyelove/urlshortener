@@ -10,7 +10,7 @@ User =  settings.AUTH_USER_MODEL
 
 class ShortLink(models.Model):
 	title = models.CharField(max_length=160, null=True)
-	description = models.TextField()
+	# description = models.TextField(null=True)
 	# slug = models.SlugField(unique=True)
 	link = models.URLField()
 	created = models.DateTimeField(auto_now_add = True)

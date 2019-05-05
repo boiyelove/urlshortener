@@ -18,7 +18,7 @@ class Crawler(object):
 
 
 	def get_title(self):
-		return self.soup.title.String
+		return self.soup.title.string
 
 	def get_description(self):
 		# First get the meta description tag
