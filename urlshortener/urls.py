@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.urls import path, include
-from .routers import router
+from .api.routers import router
 from . import views
 
 
